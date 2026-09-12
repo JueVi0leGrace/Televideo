@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Watch Video - StreamX</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <a href="index.html" class="logo">
+    Stream<span>X</span>
+  </a>
+
+  <div class="search-box">
+    <input type="text" placeholder="Search videos...">
+    <button>🔍</button>
+  </div>
+</header>
+
+<main class="watch-page">
+
+  <div class="player-container">
+
+    <video id="videoPlayer" controls autoplay>
+      <source src="videos/video1.mp4" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
+
+  </div>
+
+  <div class="watch-info">
+
+    <h1 id="videoTitle">Amazing Adventure</h1>
+
+    <div class="video-meta">
+      <span>1.2M views</span>
+      <span>•</span>
+      <span>2 days ago</span>
+    </div>
+
+    <div class="actions">
+      <button>👍 Like</button>
+      <button>🔗 Share</button>
+      <button>💾 Save</button>
+    </div>
+
+    <div class="description">
+      <h3>Description</h3>
+
+      <p>
+        Welcome to StreamX. Enjoy this amazing video and discover
+        more exciting content.
+      </p>
+    </div>
+
+  </div>
+
+</main>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const video = params.get("video");
+const title = params.get("title");
+
+if (video) {
+  document.getElementById("videoPlayer").src = video;
+}
+
+if (title) {
+  document.getElementById("videoTitle").textContent = title;
+  document.title = title + " - StreamX";
+}
+
+</script>
+
+</body>
+</html>
