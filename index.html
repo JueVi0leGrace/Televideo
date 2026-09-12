@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamX - Video Streaming</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">Stream<span>X</span></div>
+
+  <div class="search-box">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search videos..."
+      onkeyup="searchVideos()"
+    >
+    <button onclick="searchVideos()">🔍</button>
+  </div>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<nav id="mobileMenu">
+  <a href="#">Home</a>
+  <a href="#trending">Trending</a>
+  <a href="#movies">Movies</a>
+  <a href="#music">Music</a>
+  <a href="#sports">Sports</a>
+</nav>
+
+<main>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="tag">FEATURED VIDEO</p>
+    <h1>Discover Your Next Favorite Video</h1>
+    <p>
+      Watch videos, explore new content and enjoy your favorite
+      entertainment in one place.
+    </p>
+
+    <button class="watch-btn"
+      onclick="openVideo('videos/video1.mp4','Amazing Adventure')">
+      ▶ Watch Now
+    </button>
+  </div>
+</section>
+
+<section class="section" id="trending">
+  <div class="section-title">
+    <h2>🔥 Trending</h2>
+    <button onclick="showAll()">View All</button>
+  </div>
+
+  <div class="video-grid" id="videoGrid">
+
+    <article class="video-card" data-title="Amazing Adventure">
+      <div class="thumbnail">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800"
+             alt="Amazing Adventure">
+        <span class="duration">10:24</span>
+      </div>
+
+      <div class="video-info">
+        <h3>Amazing Adventure</h3>
+        <p>1.2M views • 2 days ago</p>
+      </div>
+    </article>
+
+    <article class="video-card" data-title="Beautiful Nature">
+      <div class="thumbnail">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800"
+             alt="Beautiful Nature">
+        <span class="duration">08:15</span>
+      </div>
+
+      <div class="video-info">
+        <h3>Beautiful Nature</h3>
+        <p>845K views • 4 days ago</p>
+      </div>
+    </article>
+
+    <article class="video-card" data-title="City Life">
+      <div class="thumbnail">
+        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800"
+             alt="City Life">
+        <span class="duration">12:40</span>
+      </div>
+
+      <div class="video-info">
+        <h3>City Life</h3>
+        <p>654K views • 1 week ago</p>
+      </div>
+    </article>
+
+    <article class="video-card" data-title="Ocean Journey">
+      <div class="thumbnail">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+             alt="Ocean Journey">
+        <span class="duration">15:22</span>
+      </div>
+
+      <div class="video-info">
+        <h3>Ocean Journey</h3>
+        <p>421K views • 1 week ago</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="categories" id="movies">
+  <h2>Browse Categories</h2>
+
+  <div class="category-grid">
+    <button onclick="filterCategory('Movies')">🎬 Movies</button>
+    <button onclick="filterCategory('Music')">🎵 Music</button>
+    <button onclick="filterCategory('Sports')">⚽ Sports</button>
+    <button onclick="filterCategory('Gaming')">🎮 Gaming</button>
+    <button onclick="filterCategory('Education')">📚 Education</button>
+    <button onclick="filterCategory('Travel')">✈️ Travel</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="logo">Stream<span>X</span></div>
+  <p>© 2026 StreamX. All rights reserved.</p>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
